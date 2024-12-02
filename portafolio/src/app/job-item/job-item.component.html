@@ -1,0 +1,20 @@
+<li class="job-item">
+    <div class="job-container">
+      <div class="job-highlight"></div>
+      <header class="job-duration" [attr.aria-label]="job.duration">{{ job.duration }}</header>
+      <div class="job-details">
+        <h3 class="job-title">
+          <a [href]="job.url" target="_blank" rel="noreferrer noopener" [attr.aria-label]="'Job at ' + job.company">
+            {{ job.title }} · <span class="company">{{ job.company }}</span>
+          </a>
+        </h3>
+        <p class="job-description">{{ job.description }}</p>
+        <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+          <li *ngFor="let tech of job.technologies" class="mr-1.5 mt-2">
+            <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">{{ tech }}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+  

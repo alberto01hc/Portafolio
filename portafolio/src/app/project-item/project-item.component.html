@@ -1,0 +1,27 @@
+<li class="job-item">
+    <div class="job-container">
+      <div class="job-highlight"></div>
+      <div class="job-details">
+        <div class="job-header">
+          <!-- Imagen a la izquierda -->
+          <div class="job-image">
+            <img [src]="project.imageUrl" alt="Job Image" class="job-img" />
+          </div>
+          <div class="job-info">
+            <h3 class="job-title">
+              <a [href]="project.url" target="_blank" rel="noreferrer noopener" [attr.aria-label]="'Job at ' + project.company">
+                {{ project.title }} · <span class="company">{{ project.company }}</span>
+              </a>
+            </h3>
+            <p class="job-description">{{ project.description }}</p>
+            <ul class="mt-2 flex flex-wrap" aria-label="Technologies used">
+                <li *ngFor="let tech of project.technologies" class="mr-1.5 mt-2">
+                  <div class="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">{{ tech }}</div>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  

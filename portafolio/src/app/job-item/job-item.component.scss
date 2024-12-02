@@ -1,0 +1,83 @@
+/* Job Item Container */
+.job-item {
+    margin-bottom: 3rem;
+    position: relative;
+    max-width: 600px; /* Ancho máximo de 600px */
+  }
+  
+  /* Highlight Background */
+  .job-highlight {
+    position: absolute;
+    inset: -1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 0;
+  }
+  
+  .job-item:hover .job-highlight {
+    box-shadow: inset 1px 1px 1px 1px rgba(148, 163, 184, 0.1),
+      0 4px 8px rgba(15, 23, 42, 0.25);
+  }
+  
+  /* Job Duration */
+  .job-duration {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #64748b; /* Slate-500 */
+    margin-bottom: 0.5rem;
+    z-index: 10;
+  }
+  
+  /* Job Details */
+  .job-details {
+    z-index: 10;
+  }
+  
+  /* Job Title */
+  .job-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e2e8f0; /* Slate-200 */
+    margin: 0.5rem 0;
+  }
+  
+  .job-title a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .icon {
+    height: 1rem;
+    width: 1rem;
+    margin-left: 0.25rem;
+    transition: transform 0.3s;
+  }
+  
+  
+  /* Job Description */
+  .job-description {
+    font-size: 0.875rem;
+    color: #94a3b8; /* Slate-400 */
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  /* Technologies List */
+  .job-technologies {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .technology-item {
+    background-color: rgba(45, 212, 191, 0.1); /* Teal-400/10 */
+    color: #38bdf8; /* Teal-300 */
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+  }
+  

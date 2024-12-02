@@ -1,0 +1,91 @@
+/* Job Item Container */
+.job-item {
+    margin-bottom: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Para que el contenido esté debajo de la cabecera */
+    max-width: 600px; /* Ancho máximo de 600px */
+}
+
+/* Highlight Background */
+.job-highlight {
+    position: absolute;
+    inset: -1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 0;
+}
+
+.job-item:hover .job-highlight {
+    box-shadow: inset 1px 1px 1px 1px rgba(148, 163, 184, 0.1),
+      0 4px 8px rgba(15, 23, 42, 0.25);
+}
+
+/* Job Header (Image + Title) */
+.job-header {
+    display: flex;
+    align-items: flex-start; /* Alinea la imagen y el texto desde arriba */
+    margin-bottom: 1rem; /* Espacio entre el header y la descripción */
+}
+
+/* Job Image */
+.job-image {
+    margin-right: 1rem; /* Espacio entre la imagen y el título */
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.job-img {
+    width: 120px; /* Tamaño de la imagen rectangular */
+    height: 80px; /* Alto de la imagen rectangular */
+    object-fit: cover;
+    border-radius: 0.5rem; /* Bordes redondeados */
+}
+
+/* Job Info (Title + Description) */
+.job-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; /* Permite que el contenido de texto ocupe el espacio disponible */
+}
+
+/* Job Title */
+.job-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e2e8f0; /* Slate-200 */
+    margin: 0; /* Eliminar margen por defecto */
+}
+
+.job-title a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Job Description */
+.job-description {
+    font-size: 0.875rem;
+    color: #94a3b8; /* Slate-400 */
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    flex-grow: 1; /* Permite que la descripción ocupe el espacio restante */
+}
+
+/* Technologies List */
+.job-technologies {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.technology-item {
+    background-color: rgba(45, 212, 191, 0.1); /* Teal-400/10 */
+    color: #38bdf8; /* Teal-300 */
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}

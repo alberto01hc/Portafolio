@@ -1,0 +1,18 @@
+/* cursor.component.css */
+.cursor {
+  position: absolute;
+  width: 0px; /* Aumento el tamaño para mayor efecto */
+  height: 0px; /* Aumento el tamaño */
+  border-radius: 50%;
+  background-color: transparent; /* No hay color de fondo, el cursor es invisible */
+  pointer-events: none; /* Asegura que el cursor no interrumpa la interacción con otros elementos */
+  transition: transform 0.1s ease;
+  box-shadow: 0 0 300px 200px #23355460; /* Resplandor más amplio */
+  z-index: 9999; /* Asegura que el cursor esté encima de otros elementos */
+}
+
+/* Efecto al pasar el mouse sobre algo */
+.cursor:hover {
+  transform: scale(1.5); /* Aumenta el tamaño para hacer el efecto más notorio */
+  box-shadow: 0 0 200px 100px rgba(255, 255, 255, 0.8); /* Aumenta el resplandor al pasar el mouse */
+}

@@ -1,0 +1,15 @@
+<div class="main-section">
+    <div class="left-column">
+      <div class="tabs">
+        <button (click)="selectTab('about')">About</button>
+        <button (click)="selectTab('experience')">Experience</button>
+        <button (click)="selectTab('projects')">Projects</button>
+      </div>
+    </div>
+    <div class="right-column">
+      <app-about *ngIf="selectedTab === 'about'"></app-about>
+      <app-experience *ngIf="selectedTab === 'experience'"></app-experience>
+      <app-projects *ngIf="selectedTab === 'projects'"></app-projects>
+    </div>
+  </div>
+  
