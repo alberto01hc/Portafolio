@@ -15,48 +15,59 @@ html {
     font-variation-settings: normal
 }
 
-
-
 .container {
   display: flex; /* o block, según el diseño */
   width: 100%;
   height: 100vh;
 }
 
-
 .container2 {
   display: flex;
+  flex-direction: row; /* Disposición en fila en pantallas grandes */
   width: 100%;
   height: 100vh;
-  overflow-x: hidden; /* Previene el desbordamiento horizontal */
-}
-
-
-main.right {
-    width: 50%; /* Mitad derecha */
-    height: 100%; /* Toda la altura */
-    background-color: #0a192f; /* Fondo para diferenciar */
-    padding: 20px; /* Espaciado interno */
-    overflow-y:hidden;
+  overflow: hidden; /* Previene el desbordamiento no deseado */
 }
 .container3 {
-  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none; /* Ocultar barra de desplazamiento en IE y Edge */
+  scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
+  padding-top: 60px;
 }
 
+main.right {
+  flex: 1; /* Ocupa el espacio restante disponible */
+  min-height: 0; /* Asegura que el contenedor pueda reducirse sin overflow */
+  background-color: #0a192f;
+  padding: 20px;
+  overflow-y: auto; /* Permite scroll interno si el contenido es muy grande */
+  box-sizing: border-box;
+}
+
+
+.main{
+  flex: 2;
+}
+
+
 header.left {
-    width: 50%; /* La mitad izquierda de la pantalla */
-    height: 100%; /* Completa la altura */
-    background-color: #0a192f;
-    padding: 20px;
-    display: flex; /* Usar Flexbox */
-    flex-direction: column; /* Alinear los elementos verticalmente */
-    justify-content: space-between; /* Distribuir el contenido verticalmente */
-    overflow: hidden; /* Evitar scroll */
-    align-items: center;
+  flex: 1; /* Ocupa el espacio restante disponible */
+  min-height: 0; /* Asegura que el contenedor pueda reducirse sin overflow */
+  background-color: #0a192f;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-y: auto; /* Permite scroll interno si es necesario */
 }
 
 .header-info {
-    flex-grow: 1;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -142,18 +153,45 @@ header.left {
 }
 
 
-
-  .container3 {
-    width: 100%;
-    height: 100%;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: none; /* Ocultar barra de desplazamiento en IE y Edge */
-    scrollbar-width: none; /* Ocultar barra de desplazamiento en Firefox */
-    padding-top: 60px;
-}
-
 /* Ocultar la barra de desplazamiento en navegadores basados en WebKit */
 .container3::-webkit-scrollbar {
     display: none;
+}
+.container2 {
+  display: flex;
+  flex-direction: row; /* Disposición en fila en pantallas grandes */
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden; /* Previene el desbordamiento horizontal */
+}
+
+main.right {
+  flex: 1; /* Toma el espacio disponible sin ser reducido */
+  height: 100%;
+  background-color: #0a192f;
+  padding: 20px;
+  overflow-y: auto; /* Permite scroll interno si el contenido excede */
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 1024px) {
+  .container2 {
+    flex-direction: column; /* Cambia a disposición vertical */
+    height: 100%; /* Ajusta la altura completa al viewport */
+  }
+  .header-info app-social-links{
+    margin-top: 0px;
+}
+
+  header.left {
+    align-items: start;
+    height: 50%; /* Ocupa la mitad del espacio disponible */
+    flex-shrink: 0; /* Evita que se colapse más allá de este tamaño */
+  }
+
+  main.right {
+    height: 50%; /* Ocupa la otra mitad del espacio disponible */
+    flex-shrink: 0; /* Evita que se colapse más allá de este tamaño */
+  }
 }
